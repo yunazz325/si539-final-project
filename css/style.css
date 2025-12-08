@@ -10,15 +10,15 @@ body {
     /* display: flex;
     justify-content: end;
     align-items: end; */
-    background-color: lightblue;
+    background-color: rgb(195, 168, 221);
 }
 
 /* fix the navigator */
 nav {
-    position: fixed;      /* 固定在屏幕上，不随滚动移动 */
-    top: 30px;            /* 距离顶部 30px，你可以自己调 */
-    right: 40px;          /* 距离右边 40px，可以自己调 */
-    z-index: 1000;        /* 确保盖在照片和文字上面 */
+    position: fixed; 
+    top: 30px;
+    right: 40px;
+    z-index: 1000;
 }
 
 .nav-wrapper {
@@ -27,7 +27,7 @@ nav {
     gap: 40px;
     background-color: #ffffff;
     padding: 18px 30px;
-    border-radius: 999px;   /*round corner*/
+    border-radius: 14px;   /*round corner*/
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
@@ -40,12 +40,12 @@ nav {
     padding: 6px 4px;
     transition: color 0.2s ease, transform 0.2s ease;
 }
-/* 悬停效果：颜色变深，略微上移一点点 */
+/* hover */
 .nav-link:hover {
     color: #111;
     transform: translateY(-1px);
 }
-/* 底部小下划线：用伪元素做 */
+/* underline */
 .nav-link::after {
     content: "";
     position: absolute;
@@ -53,12 +53,12 @@ nav {
     bottom: -4px; 
     width: 0;
     height: 2px;
-    border-radius: 999px;
+    border-radius: 14px;
     background: #27c4c5;
     transform: translateX(-50%);
     transition: width 0.2s ease;
 }
-/* 悬停时显示下划线 */
+/* hover underline */
 .nav-link:hover::after {
     width: 70%;
 }   
@@ -76,22 +76,22 @@ nav {
     width: 320px;
     height: 420px;
     border-radius: 24px;
-    overflow: hidden;       /* 照片超出部分裁掉，保证是个干净的矩形/圆角框 */
+    overflow: hidden;       /* overflow */
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     background: #ffffff;
 }
 
-/* 照片本身铺满容器 */
+
 .hero-photo img {
     width: 100%;
     height: 100%;
-    object-fit: cover;      /* 保持比例裁剪，保证不变形 */
+    object-fit: cover;
 }
 .hero-text {
-    flex: 1;                /* 占据剩下的宽度 */
+    flex: 1;
     max-width: 500px;
     padding: 24px 28px;
-    border: 3px solid #f7c744;  /* 黄色边框，类似你画的黄框 */
+    border: 3px solid #f7c744;
     border-radius: 18px;
     background: rgba(255, 255, 255, 0.35);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
@@ -113,7 +113,7 @@ nav {
 
 .education {
     max-width: 1200px;
-    margin: 40px auto 80px;      /* 跟 hero 有一点间距 */
+    margin: 40px auto 80px;
     padding: 0 80px;
 }
 
@@ -134,25 +134,25 @@ nav {
     margin-bottom: 24px;
 }
 
-/* 时间轴整体：竖直排列的卡片 */
+/* timeline */
 .edu-timeline {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-/* 单条经历的布局：左边年份胶囊 + 右边卡片 */
+/* experience capsule */
 .edu-item {
     display: flex;
     gap: 20px;
     align-items: flex-start;
 }
 
-/* 年份胶囊 */
+/* year */
 .edu-year {
     flex-shrink: 0;
     padding: 8px 16px;
-    border-radius: 999px;
+    border-radius: 14px;
     background: #ffe28a;
     color: #715200;
     font-size: 14px;
@@ -160,7 +160,7 @@ nav {
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
 }
 
-/* 右侧卡片 */
+/* right card */
 .edu-card {
     flex: 1;
     background: rgba(255, 255, 255, 0.9);
@@ -191,13 +191,13 @@ nav {
     color: #435865;
 }
 
-/* 悬停时卡片稍微抬起一点 */
+/* hover up */
 .edu-card:hover {
     transform: translateY(-3px);
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.18);
 }
 
-/* ---------- 简单响应式：窄屏时上下排 ---------- */
+/* ---------- narrower page ---------- */
 @media (max-width: 800px) {
     .hero {
         flex-direction: column;
@@ -241,12 +241,12 @@ nav {
 
 .skills-layout {
     display: grid;
-    grid-template-columns: 1fr 2fr;  /* 左：skills，右：经历 */
+    grid-template-columns: 1fr 2fr;
     gap: 32px;
     align-items: flex-start;
 }
 
-/* Skill 标签区域 */
+/* Skills tag */
 .skills-list h3,
 .experience-list h3 {
     font-size: 18px;
@@ -262,7 +262,7 @@ nav {
 
 .skill-tag {
     padding: 6px 12px;
-    border-radius: 999px;
+    border-radius: 14px;
     background: rgba(255, 255, 255, 0.8);
     border: 1px solid rgba(255, 255, 255, 0.9);
     font-size: 13px;
@@ -272,7 +272,7 @@ nav {
                 box-shadow 0.18s ease, transform 0.18s ease;
 }
 
-/* 高亮状态（由 JS 添加/移除） */
+/* hightlight status(controlled by JS) */
 .skill-tag.highlight {
     background: #ffe28a;
     color: #5a3d00;
@@ -280,7 +280,7 @@ nav {
     transform: translateY(-1px);
 }
 
-/* 经历卡片区域 */
+/* Experience card */
 .experience-list {
     display: flex;
     flex-direction: column;
@@ -321,7 +321,7 @@ nav {
     color: #425464;
 }
 
-/* ---------- 响应式：屏宽窄一点时上下堆叠 ---------- */
+/* ---------- narrower page ---------- */
 @media (max-width: 900px) {
     .skills-section {
         padding: 0 24px;
@@ -362,7 +362,6 @@ nav {
     border: 2px solid rgba(255, 255, 255, 0.8);
 }
 
-/* 单行联系方式：左边是标签，右边是内容 */
 .contact-row {
     display: flex;
     align-items: center;
@@ -382,7 +381,7 @@ nav {
     font-size: 14px;
     color: #1f6fa5;
     text-decoration: none;
-    word-break: break-all; /* 链接太长就自动换行 */
+    word-break: break-all;
     transition: color 0.18s ease, text-decoration-color 0.18s ease;
 }
 
@@ -398,7 +397,7 @@ nav {
     color: #7a8d9a;
 }
 
-/* 窄屏适配 */
+/* narrower page */
 @media (max-width: 900px) {
     .contact-section {
         padding: 0 24px;
